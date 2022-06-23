@@ -21,7 +21,7 @@
 title: User Interactive Offline Reinforcement Learning
 email: swazinna@in.tum.de
 description: >- # this means to ignore newlines until "baseurl:"
-  GitHub page for the paper - User Interactive Offline Reinforcement Learning
+  GitHub page for the paper: User Interactive Offline Reinforcement Learning
 baseurl: "/LION/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: philswazinna
