@@ -44,15 +44,16 @@ In a simple 2D environment with data collecting policy as shown in (a) and rewar
 ![2DPolicy](/imgs/combined_simple.png){:class="img-responsive"}
 
 
-&nbsp  
+&nbsp;  
 
 ## Influence of λ-Distribution
 ![Betas](/imgs/betas.png){:class="img-responsive"}{: width="500"}{: .align-center}
+
 We do not sample λ uniformly since doing so leads to less accurate learning at the edges of the λ-spectrum. Above, we show visualizations of different symmetric Beta distributions from which we draw λ together with the policy results on the bad-0.2 dataset. The Beta(1, 1) case corresponds to the uniform distribution and has a significant discrepancy at the λ=0 end of the range: The original policy (its performance) is not accurately reproduced. Generally, it seems the more flat the distribution becomes, the more are the two extreme cases moved together. We observe this phenomenon even though the policy has plenty of capacity.
 
 
 &nbsp  
 
 ## Model-free Experiments
-![Modelfree](/imgs/ib_value_baselines.png){:class="img-responsive"}{: width="500"}{: .align-center}
+![Modelfree](/imgs/ib_value_baselines.png){:class="img-responsive"}
 While it should be possible to derive a similar algorithm as LION in the model-free world, we were not quite able to do so: Fig. \ref{fig:ib_value} shows an experiment in which we augment TD3+BC with our approach by sampling λ from the same distribution as in LION and providing it to the policy, only that now it controls the influence the value function has on the optimization of the policy and (1-λ) controls the distance to the behavior actions. Interestingly however, the trained policy is unable to alter its behavior anywhere in the λ-range. Instead it seems that the policy training is rather unstable and the policy collapses to a solution that behaves always the same, regardless of λ$. Similarly, the distance to the original policy does not change with varying λ.
