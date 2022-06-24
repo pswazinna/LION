@@ -17,6 +17,7 @@ We present LION: Learning in Interactive Offline eNvironments - an offline RL al
 
 ## Industrial Benchmark Results
 ![Results](/imgs/ib_all_newlabel.png){:class="img-responsive"}
+
 Comparison with prior model-free and model-based offline RL algorithms on the Industrial Benchmark. We show evaluation performance and distance to the original policy for the LION approach over the chosen λ hyperparameter. State of the art baselines are added as dashed lines with their standard set of hyperparameters (results from [Swazinna et al. 2022](https://arxiv.org/abs/2201.05433)). Even though the baselines all exhibit some hyperparameter that controls the distance to the original policy, all are implemented differently and we can neither map them to a corresponding lambda value of our algorithm, nor change the behavior at runtime, which is why we display them as dashed lines over the entire λ spectrum.
 
 
@@ -30,6 +31,7 @@ Offline reinforcement learning algorithms still lack trust in practice due to th
 
 ## Algorithm Architecture
 ![Schematic](/imgs/lion_visual_crop.png){:class="img-responsive"}
+
 Schematic of LION policy training. Only π (in green) is trained, while the original
 policy model β (orange) and the dynamics ensemble {f} (blue) are already trained and remain
 unchanged. λ is sampled individually for every single imagined trajectory.
@@ -43,6 +45,7 @@ unchanged. λ is sampled individually for every single imagined trajectory.
 {: refdef}
 
 In a simple 2D environment with data collecting policy as shown in (a) and rewards distributed according to a gaussian around a fixed point as in (b), we can easily visualize how the trained policy changes for different λ at test-time: For low values it remains close to the original policy, while for increasing values it more and more disregards the collecting policy and moves to optimize the return.
+
 ![2DPolicy](/imgs/combined_simple.png){:class="img-responsive"}
 
 
@@ -60,4 +63,5 @@ We do not sample λ uniformly since doing so leads to less accurate learning at 
 
 ## Model-free Experiments
 ![Modelfree](/imgs/ib_value_baselines.png){:class="img-responsive"}
+
 While it should be possible to derive a similar algorithm as LION in the model-free world, we were not quite able to do so: Fig. \ref{fig:ib_value} shows an experiment in which we augment TD3+BC with our approach by sampling λ from the same distribution as in LION and providing it to the policy, only that now it controls the influence the value function has on the optimization of the policy and (1-λ) controls the distance to the behavior actions. Interestingly however, the trained policy is unable to alter its behavior anywhere in the λ-range. Instead it seems that the policy training is rather unstable and the policy collapses to a solution that behaves always the same, regardless of λ$. Similarly, the distance to the original policy does not change with varying λ.
