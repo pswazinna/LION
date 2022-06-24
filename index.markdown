@@ -13,20 +13,20 @@ layout: home
 We present LION: Learning in Interactive Offline eNvironments - an offline RL algorithm that may at runtime change its behavior based on a user's personal preference regarding the proximity to previously observed behavior, resolving issues related to both trust and hyperparameter tuning for offline reinforcement learning.
 
 
-&nbsp  
+&nbsp;  
 
 ## Industrial Benchmark Results
 ![Results](/imgs/ib_all_newlabel.png){:class="img-responsive"}
 Comparison with prior model-free and model-based offline RL algorithms on the Industrial Benchmark. We show evaluation performance and distance to the original policy for the LION approach over the chosen λ hyperparameter. State of the art baselines are added as dashed lines with their standard set of hyperparameters (results from [Swazinna et al. 2022](https://arxiv.org/abs/2201.05433)). Even though the baselines all exhibit some hyperparameter that controls the distance to the original policy, all are implemented differently and we can neither map them to a corresponding lambda value of our algorithm, nor change the behavior at runtime, which is why we display them as dashed lines over the entire λ spectrum.
 
 
-&nbsp  
+&nbsp;  
 
 ## Abstract
 Offline reinforcement learning algorithms still lack trust in practice due to the risk that the learned policy performs worse than the original policy that generated the dataset or behaves in an unexpected way that is unfamiliar to the user. At the same time, offline RL algorithms are not able to tune their most important hyperparameter - the proximity of the learned policy to the original policy. We propose an algorithm that allows the user to tune this hyperparameter at runtime, thereby overcoming both of the above mentioned issues simultaneously. This allows users to start with the original behavior and grant successively greater deviation, as well as stopping at any time when the policy deteriorates or the behavior is too far from the familiar one.
 
 
-&nbsp  
+&nbsp;  
 
 ## Algorithm Architecture
 ![Schematic](/imgs/lion_visual_crop.png){:class="img-responsive"}
@@ -35,10 +35,10 @@ policy model β (orange) and the dynamics ensemble {f} (blue) are already traine
 unchanged. λ is sampled individually for every single imagined trajectory.
 
 
-&nbsp  
+&nbsp;  
 
 ## 2D World Example
-![2DWorld](/imgs/basics_simple.png){:class="img-responsive"}{: width="400" .align-center}
+![2DWorld](/imgs/basics_simple.png){:class="img-responsive"}{: width="400"}{ display:block; margin: 0 auto; }
 
 In a simple 2D environment with data collecting policy as shown in (a) and rewards distributed according to a gaussian around a fixed point as in (b), we can easily visualize how the trained policy changes for different λ at test-time: For low values it remains close to the original policy, while for increasing values it more and more disregards the collecting policy and moves to optimize the return.
 ![2DPolicy](/imgs/combined_simple.png){:class="img-responsive"}
@@ -52,7 +52,7 @@ In a simple 2D environment with data collecting policy as shown in (a) and rewar
 We do not sample λ uniformly since doing so leads to less accurate learning at the edges of the λ-spectrum. Above, we show visualizations of different symmetric Beta distributions from which we draw λ together with the policy results on the bad-0.2 dataset. The Beta(1, 1) case corresponds to the uniform distribution and has a significant discrepancy at the λ=0 end of the range: The original policy (its performance) is not accurately reproduced. Generally, it seems the more flat the distribution becomes, the more are the two extreme cases moved together. We observe this phenomenon even though the policy has plenty of capacity.
 
 
-&nbsp  
+&nbsp;  
 
 ## Model-free Experiments
 ![Modelfree](/imgs/ib_value_baselines.png){:class="img-responsive"}
