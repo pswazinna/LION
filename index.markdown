@@ -43,8 +43,7 @@ ___
 
 
 ### 2D World Example
-{: style="text-align:center"}
-![2DWorld](/imgs/basics_simple.png){:class="img-responsive"}{: width="400" }
+![2DWorld](/imgs/basics_simple.png){:class="img-responsive"}{: width="400" .align-center}
 
 In a simple 2D environment with data collecting policy as shown in (a) and rewards distributed according to a gaussian around a fixed point as in (b), we can easily visualize how the trained policy changes for different λ at test-time: For low values it remains close to the original policy, while for increasing values it more and more disregards the collecting policy and moves to optimize the return.
 ![2DPolicy](/imgs/combined_simple.png){:class="img-responsive"}
@@ -54,5 +53,5 @@ ___
 
 
 ## Influence of λ-Distribution
-![Betas](/imgs/betas.png){:class="img-responsive"}
+![Betas](/imgs/betas.png){:class="img-responsive"}{: width="500"}{: .align-center}
 We do not sample λ uniformly since doing so leads to less accurate learning at the edges of the λ-spectrum. Above, we show visualizations of different symmetric Beta distributions from which we draw λ together with the policy results on the bad-0.2 dataset. The Beta(1, 1) case corresponds to the uniform distribution and has a significant discrepancy at the λ=0 end of the range: The original policy (its performance) is not accurately reproduced. Generally, it seems the more flat the distribution becomes, the more are the two extreme cases moved together. We observe this phenomenon even though the policy has plenty of capacity.
