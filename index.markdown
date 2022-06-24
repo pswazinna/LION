@@ -10,14 +10,14 @@ layout: home
 {: style="text-align:center"}
 [Read the Full Paper](https://arxiv.org/abs/2205.10629)
 
-___
-
-
 We present LION: Learning in Interactive Offline eNvironments - an offline RL algorithm that may at runtime change its behavior based on a user's personal preference regarding the proximity to previously observed behavior, resolving issues related to both trust and hyperparameter tuning for offline reinforcement learning.
 
 
+___
+
+## Industrial Benchmark Results
 ![Results](/imgs/ib_all_newlabel.png){:class="img-responsive"}
-Comparison with prior model-free and model-based offline RL algorithms. We show evaluation performance and distance to the original policy for the LION approach over the chosen λ hyperparameter. State of the art baselines are added as dashed lines with their standard set of hyperparameters (results from [Swazinna et al. 2022](https://arxiv.org/abs/2201.05433)). Even though the baselines all exhibit some hyperparameter that controls the distance to the original policy, all are implemented differently and we can neither map them to a corresponding lambda value of our algorithm, nor change the behavior at runtime, which is why we display them as dashed lines over the entire λ spectrum.
+Comparison with prior model-free and model-based offline RL algorithms on the Industrial Benchmark. We show evaluation performance and distance to the original policy for the LION approach over the chosen λ hyperparameter. State of the art baselines are added as dashed lines with their standard set of hyperparameters (results from [Swazinna et al. 2022](https://arxiv.org/abs/2201.05433)). Even though the baselines all exhibit some hyperparameter that controls the distance to the original policy, all are implemented differently and we can neither map them to a corresponding lambda value of our algorithm, nor change the behavior at runtime, which is why we display them as dashed lines over the entire λ spectrum.
 
 ___
 
@@ -55,3 +55,11 @@ ___
 ## Influence of λ-Distribution
 ![Betas](/imgs/betas.png){:class="img-responsive"}{: width="500"}{: .align-center}
 We do not sample λ uniformly since doing so leads to less accurate learning at the edges of the λ-spectrum. Above, we show visualizations of different symmetric Beta distributions from which we draw λ together with the policy results on the bad-0.2 dataset. The Beta(1, 1) case corresponds to the uniform distribution and has a significant discrepancy at the λ=0 end of the range: The original policy (its performance) is not accurately reproduced. Generally, it seems the more flat the distribution becomes, the more are the two extreme cases moved together. We observe this phenomenon even though the policy has plenty of capacity.
+
+
+___
+
+
+## Model-free Experiments
+![Modelfree](/imgs/ib_value_baselines.png){:class="img-responsive"}{: width="500"}{: .align-center}
+While it should be possible to derive a similar algorithm as LION in the model-free world, we were not quite able to do so: Fig. \ref{fig:ib_value} shows an experiment in which we augment TD3+BC with our approach by sampling λ from the same distribution as in LION and providing it to the policy, only that now it controls the influence the value function has on the optimization of the policy and (1-λ) controls the distance to the behavior actions. Interestingly however, the trained policy is unable to alter its behavior anywhere in the λ-range. Instead it seems that the policy training is rather unstable and the policy collapses to a solution that behaves always the same, regardless of λ$. Similarly, the distance to the original policy does not change with varying λ.
