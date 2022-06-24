@@ -28,7 +28,7 @@ twitter_username: philswazinna
 github_username: pswazinna
 
 # Build settings
-remote_theme: minima
+theme: minima # remote_
 plugins:
   - jekyll-feed
 
