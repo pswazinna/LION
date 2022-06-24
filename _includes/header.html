@@ -1,10 +1,10 @@
 <header class="site-header">
 
-    <div class="wrapper">
+    <div class="wrapper" text-align="center">
       {%- assign default_paths = site.pages | map: "path" -%}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-      <div text-align="center"><a class="site-title" rel="author" href="{{ "/" | relative_url }}">can i write shit here?{{ site.title | escape }}</a></div>
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">yes!{{ site.title | escape }}</a>
   
       {%- if titles_size > 0 -%}
         <nav class="site-nav">
