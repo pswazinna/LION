@@ -9,3 +9,5 @@ Offline reinforcement learning algorithms still lack trust in practice due to th
 
 {: style="text-align:center"}
 [Read the Full Paper](https://arxiv.org/abs/2205.10629)
+
+![Results](/imgs/ib_all_newlabel.png){:class="img-responsive"}
