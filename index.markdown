@@ -38,7 +38,9 @@ unchanged. λ is sampled individually for every single imagined trajectory.
 &nbsp;  
 
 ## 2D World Example
-![2DWorld](/imgs/basics_simple.png){:width="400"}{:style="text-align: center;"}
+{:refdef: style="text-align: center;"}
+![2DWorld](/imgs/basics_simple.png){:width="400"}
+{: refdef}
 
 In a simple 2D environment with data collecting policy as shown in (a) and rewards distributed according to a gaussian around a fixed point as in (b), we can easily visualize how the trained policy changes for different λ at test-time: For low values it remains close to the original policy, while for increasing values it more and more disregards the collecting policy and moves to optimize the return.
 ![2DPolicy](/imgs/combined_simple.png){:class="img-responsive"}
