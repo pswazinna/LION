@@ -49,7 +49,9 @@ In a simple 2D environment with data collecting policy as shown in (a) and rewar
 &nbsp;  
 
 ## Influence of λ-Distribution
-![Betas](/imgs/betas.png){:class="img-responsive"}{: width="500"}{: .align-center}
+{:refdef: style="text-align: center;"}
+![Betas](/imgs/betas.png){:class="img-responsive"}{: width="500"}
+{: refdef}
 
 We do not sample λ uniformly since doing so leads to less accurate learning at the edges of the λ-spectrum. Above, we show visualizations of different symmetric Beta distributions from which we draw λ together with the policy results on the bad-0.2 dataset. The Beta(1, 1) case corresponds to the uniform distribution and has a significant discrepancy at the λ=0 end of the range: The original policy (its performance) is not accurately reproduced. Generally, it seems the more flat the distribution becomes, the more are the two extreme cases moved together. We observe this phenomenon even though the policy has plenty of capacity.
 
