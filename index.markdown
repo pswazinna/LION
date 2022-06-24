@@ -5,7 +5,7 @@
 layout: home
 ---
 {: style="text-align:center"}
-Phillip Swazinna - Steffen Udluft - Thomas Runkler
+[Phillip Swazinna](https://scholar.google.de/citations?user=eqDGnSkAAAAJ&hl=en&oi=ao) - [Steffen Udluft](https://scholar.google.de/citations?user=GHLtt4cAAAAJ&hl=en&oi=ao) - [Thomas Runkler](https://scholar.google.de/citations?user=9ulZrB8AAAAJ&hl=en&oi=ao)
 
 {: style="text-align:center"}
 [Read the Full Paper](https://arxiv.org/abs/2205.10629)
