@@ -31,6 +31,15 @@ ___
 
 ### Algorithm Architecture
 ![Schematic](/imgs/lion_visual_crop.png){:class="img-responsive"}
-Schematic of LION policy training. Only πθ (in green) is trained, while the original
-policy model βφ (orange) and the dynamics ensemble {fψi} (blue) are already trained and remain
+Schematic of LION policy training. Only π (in green) is trained, while the original
+policy model β (orange) and the dynamics ensemble {f} (blue) are already trained and remain
 unchanged. λ is sampled individually for every single imagined trajectory.
+
+
+___
+
+
+### 2D World Example
+![2DWorld](/imgs/basics_simple.png){:class="img-responsive"}
+In a simple 2D environment with data collecting policy as shown in (a) and rewards distributed according to a gaussian around a fixed point as in (b), we can easily visualize how the trained policy changes for different λ at test-time: For low values it remains close to the original policy, while for increasing values it more and more disregards the collecting policy and moves to optimize the return.
+![2DPolicy](/imgs/combined_simple.png){:class="img-responsive"}
