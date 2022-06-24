@@ -37,7 +37,7 @@ unchanged. λ is sampled individually for every single imagined trajectory.
 
   
 
-  
+
 
 ___
 
@@ -48,3 +48,10 @@ ___
 
 In a simple 2D environment with data collecting policy as shown in (a) and rewards distributed according to a gaussian around a fixed point as in (b), we can easily visualize how the trained policy changes for different λ at test-time: For low values it remains close to the original policy, while for increasing values it more and more disregards the collecting policy and moves to optimize the return.
 ![2DPolicy](/imgs/combined_simple.png){:class="img-responsive"}
+
+
+___
+
+
+## Influence of λ-Distribution
+![Betas](/imgs/betas.png){:class="img-responsive"}
