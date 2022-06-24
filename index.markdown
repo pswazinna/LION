@@ -22,14 +22,14 @@ Comparison with prior model-free and model-based offline RL algorithms. We show 
 ___
 
 
-### Abstract
+## Abstract
 Offline reinforcement learning algorithms still lack trust in practice due to the risk that the learned policy performs worse than the original policy that generated the dataset or behaves in an unexpected way that is unfamiliar to the user. At the same time, offline RL algorithms are not able to tune their most important hyperparameter - the proximity of the learned policy to the original policy. We propose an algorithm that allows the user to tune this hyperparameter at runtime, thereby overcoming both of the above mentioned issues simultaneously. This allows users to start with the original behavior and grant successively greater deviation, as well as stopping at any time when the policy deteriorates or the behavior is too far from the familiar one.
 
 
 ___
 
 
-### Algorithm Architecture
+## Algorithm Architecture
 [Schematic](/imgs/lion_visual_crop.png){:class="img-responsive"}
 Schematic of LION policy training. Only π (in green) is trained, while the original
 policy model β (orange) and the dynamics ensemble {f} (blue) are already trained and remain
@@ -42,7 +42,7 @@ unchanged. λ is sampled individually for every single imagined trajectory.
 ___
 
 
-### 2D World Example
+## 2D World Example
 ![2DWorld](/imgs/basics_simple.png){:class="img-responsive"}{: width="400" .align-center}
 
 In a simple 2D environment with data collecting policy as shown in (a) and rewards distributed according to a gaussian around a fixed point as in (b), we can easily visualize how the trained policy changes for different λ at test-time: For low values it remains close to the original policy, while for increasing values it more and more disregards the collecting policy and moves to optimize the return.
