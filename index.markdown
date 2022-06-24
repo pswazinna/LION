@@ -30,12 +30,14 @@ ___
 
 
 ### Algorithm Architecture
-![Schematic](/imgs/lion_visual_crop.png){:class="img-responsive"}
+[Schematic](/imgs/lion_visual_crop.png){:class="img-responsive"}
 Schematic of LION policy training. Only π (in green) is trained, while the original
 policy model β (orange) and the dynamics ensemble {f} (blue) are already trained and remain
 unchanged. λ is sampled individually for every single imagined trajectory.
 
-\s\s\s\s
+  
+
+  
 
 ___
 
