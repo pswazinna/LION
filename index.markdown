@@ -35,7 +35,7 @@ Schematic of LION policy training. Only π (in green) is trained, while the orig
 policy model β (orange) and the dynamics ensemble {f} (blue) are already trained and remain
 unchanged. λ is sampled individually for every single imagined trajectory.
 
-
+\s\s\s\s
 ___
 
 
