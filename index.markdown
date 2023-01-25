@@ -51,6 +51,21 @@ In a simple 2D environment with data collecting policy as shown in (a) and rewar
 
 &nbsp;  
 
+
+## Other Adaptive Baselines
+{:refdef: style="text-align: center;"}
+![2DWorld](/imgs/rvs.png){:class="img-responsive"}
+{: refdef}
+
+An extremely simple method to obtain similar results would be to just train a pre-existing offline RL algorithm for a discrete number of hyperparameter values and then deliver the set of resulting policies to the user, who can then at runtime decide which policy to use. Similarly to LION, the user could then potentially tune the hyperparameter and find a good trade-off between familiarity of the solution and performance. Two downsides are immediately obvious: (i) The approach's compute cost grows linearly with the number of values considered, and (ii) since only a discrete set of policies is provided, the user is limited in their choice. Even worse however, we find that prior offline algorithms like MOPO do not necessarily behave consistently over the range of hyperparameters, as can be seen in the Figure above: The return landscape is a constant zigzag, making it hardly usable in practice.
+
+Additionally, we consider another instance of conditional policies that deliver a continuous solution: Recently, approaches that condition on the return-to-gohave become popular for offline RL. In our experiments however, the RvS baseline in the Figure below does not exhibit sufficiently diverse behavior over the course of the hyperparameters.
+
+![2DPolicy](/imgs/multi_mopo.png){:class="img-responsive"}
+
+
+&nbsp;  
+
 ## Influence of λ-Distribution
 {:refdef: style="text-align: center;"}
 ![Betas](/imgs/betas.png){:class="img-responsive"}{: width="500"}
