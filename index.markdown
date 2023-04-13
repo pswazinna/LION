@@ -8,7 +8,7 @@ layout: home
 [Phillip Swazinna](https://scholar.google.de/citations?user=eqDGnSkAAAAJ&hl=en&oi=ao) - [Steffen Udluft](https://scholar.google.de/citations?user=GHLtt4cAAAAJ&hl=en&oi=ao) - [Thomas Runkler](https://scholar.google.de/citations?user=9ulZrB8AAAAJ&hl=en&oi=ao)
 
 {: style="text-align:center"}
-[Read the Full Paper](https://arxiv.org/abs/2205.10629)
+[OpenReview](https://openreview.net/forum?id=a4COps0uokg) - [ArXiv](https://arxiv.org/abs/2205.10629)
 
 We present LION: Learning in Interactive Offline eNvironments - an offline RL algorithm that may at runtime change its behavior based on a user's personal preference regarding the proximity to previously observed behavior, resolving issues related to both trust and hyperparameter tuning for offline reinforcement learning.
 
